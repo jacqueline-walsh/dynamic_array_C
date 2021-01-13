@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 void loadNumbers(void);
 void printNumbers(void);
@@ -29,7 +30,9 @@ void loadNumbers() {
     }
         for (int i = 0; i < 10; i++) {
             a[i].id = i+1;
-            
+            strcpy(a[i].firstName,"Sam");
+            strcpy(a[i].lastName,"Smith");
+
     }
     
     free(a);
@@ -38,7 +41,7 @@ void loadNumbers() {
 
 void printNumbers() {
     for(int i = 0; i < 10; i++) {
-        printf("%d \n", a[i].id);
+        printf("%d %s %s \n", a[i].id, a[i].firstName, a[i].lastName);
     }
     printf("\n\n");
 
